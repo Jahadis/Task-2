@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Management</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Server Management</h2>
+        <hr>
+
+        <!-- Form to Create a New Server -->
+        <form id="createServerForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="language">Language:</label>
+                <input type="text" class="form-control" id="language" name="language" required>
+            </div>
+            <div class="form-group">
+                <label for="framework">Framework:</label>
+                <input type="text" class="form-control" id="framework" name="framework" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Create Server</button>
+        </form>
+
+        <hr>
+
+        <!-- Table to Display Servers -->
+        <h3>Servers</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Language</th>
+                    <th>Framework</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="serverTableBody">
+                <!-- Server data will be displayed here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Include jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- JavaScript to interact with REST API -->
+    <script>
+        // Function to fetch and display servers
+        function fetchServers() {
+            // Implement AJAX call to your API to fetch servers
+        }
+
+        // Function to create a new server
+        function createServer(serverData) {
+            // Implement AJAX call to your API to create a server
+        }
+
+        // Function to delete a server by ID
+        function deleteServer(serverId) {
+            // Implement AJAX call to your API to delete a server
+        }
+
+        // Handle form submission
+        $('#createServerForm').submit(function (e) {
+            e.preventDefault();
+            const formData = {
+                name: $('#name').val(),
+                language: $('#language').val(),
+                framework: $('#framework').val()
+            };
+
+            createServer(formData);
+        });
+
+        // Initial fetch of servers when the page loads
+        fetchServers();
+    </script>
+</body>
+</html>
